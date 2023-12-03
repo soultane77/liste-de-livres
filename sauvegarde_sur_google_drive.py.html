@@ -1,0 +1,28 @@
+# Importez les bibliothèques nécessaires
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+
+# Définissez votre fonction de sauvegarde sur Google Drive
+def sauvegarder_sur_google_drive(fichier_db):
+    # Authentifiez-vous avec Google Drive
+    gauth = GoogleAuth()
+    gauth.LocalWebserverAuth()  # Suivez les étapes d'authentification
+
+    drive = GoogleDrive(gauth)
+
+    # Remplacez '1DvV5PQT9DBBvZF9CjKCiOedUL-fAk52P' par l'ID du dossier Google Drive
+    dossier_google_drive_id = '1DvV5PQT9DBBvZF9CjKCiOedUL-fAk52P'
+
+    # Créez un objet GoogleDriveFile pour le fichier de base de données
+    fichier_drive = drive.CreateFile({'title': 'ma_collection_de_livres.db', 'parents': [{'id': dossier_google_drive_id}]})
+
+    # Définissez le contenu du fichier avec le chemin du fichier local
+    fichier_drive.SetContentFile(fichier_db)
+
+    # Téléchargez le fichier sur Google Drive
+    fichier_drive.Upload()
+    print("Sauvegarde réussie sur Google Drive")
+
+# Utilisez cette fonction pour sauvegarder la base de données
+fichier_db = 'chemin/vers/votre/base_de_donnees.db'  # Remplacez par le chemin de votre fichier DB
+sauvegarder_sur_google_drive(fichier_db)

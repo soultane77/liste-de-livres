@@ -1,0 +1,43 @@
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f5f5dc; /* Couleur beige de fond rappelant les pages d'un livre */
+    color: #5d4037; /* Couleur de texte marron foncé */
+}
+
+h1, h2, h3 {
+    font-family: 'Garamond', serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #8b4513; /* Bordure marron */
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+a {
+    color: #004d40; /* Couleur de lien rappelant la reliure en cuir */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #8b4513; /* Bouton marron */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5d4037;
+}

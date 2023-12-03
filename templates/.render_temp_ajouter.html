@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un Livre</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Ajouter un Nouveau Livre</h1>
+
+    <form action="/ajouter" method="post">
+        <input type="text" name="titre" placeholder="Titre" required>
+        <input type="text" name="auteur" placeholder="Auteur">
+        <input type="text" name="emplacement" placeholder="Emplacement">
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <a href="/">Retour à la liste des livres</a>
+</body>
+</html>
+<script>window.scrollTo(0, 0); setTimeout(function() { window.scrollTo(0, 0); },200)</script>
